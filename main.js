@@ -81,7 +81,6 @@ window.addEventListener("DOMContentLoaded", () => {
     board[index] = currentPlayer;
   };
 
-  const changePlayer = () => {
   function changePlayer() {
     playerDisplay.classList.remove(`player${currentPlayer}`);
     currentPlayer = currentPlayer === "X" ? "O" : "X";
@@ -104,6 +103,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // console.log(`tile index: ${i}`);
+    // changePlayer();
   };
 
   tiles.forEach((tile, i) => {
