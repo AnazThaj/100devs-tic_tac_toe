@@ -88,11 +88,10 @@ window.addEventListener("DOMContentLoaded", () => {
     playerDisplay.classList.add(`player${currentPlayer}`);
   };
 
-  const userAction = (tile, index) => {
+  const userAction = (tile, i) => {
     if (isValidAction(tile) && isGameActive) {
       tile.innerText = currentPlayer;
       tile.classList.add(`player${currentPlayer}`);
-      updateBoard(index);
       handleResultValidation();
       changePlayer();
     }
