@@ -78,8 +78,8 @@ window.addEventListener("DOMContentLoaded", () => {
     return true;
   };
 
-  const updateBoard = (index) => {
-    board[index] = currentPlayer;
+  const updateBoard = (i) => {
+    board[i] = currentPlayer;
   };
 
   function changePlayer() {
