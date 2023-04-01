@@ -55,16 +55,17 @@ window.addEventListener("DOMContentLoaded", () => {
     if (!board.includes("")) announce(TIE);
   }
 
+  // Helper function to announce the game result
   const announce = (type) => {
     switch (type) {
       case PLAYERO_WON:
-        announcer.innerHTML = 'Player <span class="playerO">O</span> Won';
+        announcer.innerHTML = 'Player <span class="player0">O</span> Won';
         break;
       case PLAYERX_WON:
-        announcer.innerHTML = 'Player <span class="playerX">X</span> Won';
+        announcer.innerHTML = 'Player <span class="playerx">X</span> Won';
         break;
       case TIE:
-        announcer.innerText = "Tie";
+        announcer.innerHTML = "Tie";
     }
     announcer.classList.remove("hide");
   };
