@@ -5,8 +5,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const announcer = document.querySelector(".announcer");
 
   let board = ["", "", "", "", "", "", "", "", ""];
-  let currentPlayer = "X";
   let isGameActive = true;
+  let currentPlayer = "X";
 
   const PLAYERX_WON = "PLAYERX_WON";
   const PLAYERO_WON = "PLAYERO_WON";
@@ -55,7 +55,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (!board.includes("")) announce(TIE);
+    if (!board.includes("")) announce(TIE); // no empty spaces
   }
 
   // Helper function to announce the game result
@@ -98,6 +98,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // console.log(`tile index: ${i}`);
     // changePlayer();
+  };
+
+  const resetBoard = () => {
+    board = ["", "", "", "", "", "", "", "", ""];
+    isGameActive = true;
+    announcer.classList.add("hide");
+
+    if (currentPlayer === "O") changePlayer();
+
+    tiles.forEach((tile) => {
+      tile.innerText = "";
+      tile.classList.remove("playerX");
+      tile.classList.remove("playerO");
+    });
   };
 
   tiles.forEach((tile, i) => {
