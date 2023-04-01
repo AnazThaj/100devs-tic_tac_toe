@@ -82,20 +82,21 @@ window.addEventListener("DOMContentLoaded", () => {
   };
 
   const changePlayer = () => {
+  function changePlayer() {
     playerDisplay.classList.remove(`player${currentPlayer}`);
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     playerDisplay.innerText = currentPlayer;
     playerDisplay.classList.add(`player${currentPlayer}`);
-  };
+  }
 
   const userAction = (tile, i) => {
     if (isValidAction(tile) && isGameActive) {
       tile.innerText = currentPlayer;
       tile.classList.add(`player${currentPlayer}`);
+      updateBoard(i);
       handleResultValidation();
       changePlayer();
     }
-  };
 
 
     if (currentPlayer === "O") {
