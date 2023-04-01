@@ -70,13 +70,8 @@ window.addEventListener("DOMContentLoaded", () => {
     announcer.classList.remove("hide");
   };
 
-  const isValidAction = (tile) => {
-    if (tile.innerText === "X" || tile.innerText === "O") {
-      return false;
-    }
-
-    return true;
-  };
+  const isValidAction = (tile) =>
+    tile.innerText === "X" || tile.innerText === "O" ? false : true;
 
   const updateBoard = (i) => {
     board[i] = currentPlayer;
