@@ -13,20 +13,20 @@ This is a simple implementation of the classic Tic-Tac-Toe game using HTML, CSS,
 
 ## Functions
 
-### handleResultValidation()
+### 1. handleResultValidation()
 
 This function checks if there's a winner or a tie in the game.
 
-    Iterate through each winning condition.
-    Check if the values in the board array match the winning condition.
-    If a winning condition is met, announce the winner and set isGameActive to false.
-    If there are no empty spaces left and no winner, announce a tie.
+1. Iterate through each winning condition.
+2. Check if the values in the board array match the winning condition.
+3. If a winning condition is met, announce the winner and set isGameActive to false.
+4. If there are no empty spaces left and no winner, announce a tie.
 
-### announce(type)
+### 2. announce(type)
 
 A helper function that displays the game result in the DOM.
 
-    type: A string representing the game result ("PLAYERX_WON", "PLAYERO_WON", or "TIE").
+- type: A string representing the game result ("PLAYERX_WON", "PLAYERO_WON", or "TIE").
 
 ### isValidAction(tile)
 
