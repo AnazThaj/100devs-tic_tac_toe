@@ -26,7 +26,7 @@ This function checks if there's a winner or a tie in the game.
 
 A helper function that displays the game result in the DOM.
 
-- type: A string representing the game result ("PLAYERX_WON", "PLAYERO_WON", or "TIE").
+- _type_: A string representing the game result ("PLAYERX_WON", "PLAYERO_WON", or "TIE").
 
 ### isValidAction(tile)
 
