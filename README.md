@@ -1,6 +1,6 @@
-# 100devs Tic-Tac-Toe Game
+# 100devs Tic-Tac-Toe Game _[v1.0: two player]_
 
-This is a simple implementation of the classic Tic-Tac-Toe game using HTML, CSS, and JavaScript. This version can be found in one of the branches of the GitHub repository.
+This is a simple implementation of the classic Tic-Tac-Toe game using HTML, CSS, and JavaScript. This version of Tic-Tac-Toe game is a one-on-one with another player
 
 ## Program Flow
 
