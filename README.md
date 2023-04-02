@@ -4,12 +4,12 @@ This is a simple implementation of the classic Tic-Tac-Toe game using HTML, CSS,
 
 ## Program Flow
 
-    When the DOM content is loaded, the event listener is triggered, and the script starts executing.
-    Query the DOM elements and store them in variables.
-    Initialize variables for the game state.
-    Set up winning conditions in a 2D array.
-    Define functions to handle game logic.
-    Add event listeners to each tile and the reset button.
+1. When the DOM content is loaded, the event listener is triggered, and the script starts executing.
+2. Query the DOM elements and store them in variables.
+3. Initialize variables for the game state.
+4. Set up winning conditions in a 2D array.
+5. Define functions to handle game logic.
+6. Add event listeners to each tile and the reset button.
 
 ## Functions
 
