@@ -1,8 +1,12 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const cells = Array.from(document.querySelectorAll(".tile"));
+  const tiles = Array.from(document.querySelectorAll(".tile"));
   const playerDisplay = document.querySelector(".display-player");
   const resetButton = document.querySelector("#reset");
   const announcer = document.querySelector(".announcer");
+
+  let board = ["", "", "", "", "", "", "", "", ""];
+  let isGameActive = true;
+  let currentPlayer = "X";
 
   const PLAYERX_WON = "PLAYERX_WON";
   const PLAYERO_WON = "PLAYERO_WON";
@@ -58,10 +62,10 @@ window.addEventListener("DOMContentLoaded", () => {
   const announce = (type) => {
     switch (type) {
       case PLAYERO_WON:
-        announcer.innerHTML = 'Player <span class="player0">O</span> Won';
+        announcer.innerHTML = 'Player <span class="playerO">O</span> Won';
         break;
       case PLAYERX_WON:
-        announcer.innerHTML = 'Player <span class="playerx">X</span> Won';
+        announcer.innerHTML = 'Player <span class="playerX">X</span> Won';
         break;
       case TIE:
         announcer.innerHTML = "Tie";
@@ -69,8 +73,8 @@ window.addEventListener("DOMContentLoaded", () => {
     announcer.classList.remove("hide");
   };
 
-  const isValidAction = (cell) =>
-    cell.innerText === "X" || tile.innerText === "O" ? false : true;
+  const isValidAction = (tile) =>
+    tile.innerText === "X" || tile.innerText === "O" ? false : true;
 
   const updateBoard = (i) => {
     board[i] = currentPlayer;
@@ -83,16 +87,16 @@ window.addEventListener("DOMContentLoaded", () => {
     playerDisplay.classList.add(`player${currentPlayer}`);
   }
 
-  const userAction = (cell, i) => {
-    if (isValidAction(cell) && isGameActive) {
-      cell.innerText = currentPlayer;
-      cell.classList.add(`player${currentPlayer}`);
+  const userAction = (tile, i) => {
+    if (isValidAction(tile) && isGameActive) {
+      tile.innerText = currentPlayer;
+      tile.classList.add(`player${currentPlayer}`);
       updateBoard(i);
       handleResultValidation();
       changePlayer();
     }
 
-    // console.log(`cell index: ${i}`);
+    // console.log(`tile index: ${i}`);
     // changePlayer();
   };
 
@@ -103,16 +107,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (currentPlayer === "O") changePlayer();
 
-    cells.forEach((cell) => {
-      cell.innerText = "";
-      cell.classList.remove("playerX");
-      cell.classList.remove("playerO");
+    tiles.forEach((tile) => {
+      tile.innerText = "";
+      tile.classList.remove("playerX");
+      tile.classList.remove("playerO");
     });
   };
 
-  cells.forEach((cell, i) => {
-    // cell -> [object HTMLDivElement]??
-    cell.addEventListener("click", () => userAction(cell, i));
+  tiles.forEach((tile, i) => {
+    // tile -> [object HTMLDivElement]??
+    tile.addEventListener("click", () => userAction(tile, i));
   });
 
   resetButton.addEventListener("click", resetBoard);
