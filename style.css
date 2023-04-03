@@ -38,7 +38,7 @@
   font-family: "Permanent Marker", cursive;
 }
 
-.tile {
+.cell {
   border: 1px solid white;
   min-width: 100px;
   min-height: 100px;
@@ -75,12 +75,4 @@
   font-size: 20px;
   margin-left: 1em;
   cursor: pointer;
-}
-
-.restart {
-  background-color: #498afb;
-}
-
-#reset {
-  background-color: #ff3860;
 }
